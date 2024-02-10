@@ -20,10 +20,10 @@ class Database_Cli():
             self.conn.commit()
         self.conn.close()
 
-    def create_table(self, table, fields):
-        self.cur.execute(f"CREATE TABLE IF NOT EXISTS {table} {fields}")
+    def create_table(self, table, fields: list):
+        self.cur.execute(f"CREATE TABLE IF NOT EXISTS {table} ({','.join(fields)})")
     
-    def insert_data(self, table, data=None):
+    def insert_data(self, table, data:list=None):
         """ data: should be a list of tuples
         """
         n = len(data[0])
