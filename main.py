@@ -6,7 +6,7 @@ Ref.:
 import tkinter as tk
 from tkinter import ttk
 from src.tk_items import Page
-from src.database_client import Database_Cli
+from database_tools import Database_Cli
 
 LARGEFONT = ("Arial", 20)
 USERS_DATA = "./db/users_data.db"
