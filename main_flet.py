@@ -2,8 +2,7 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    # maximize the window
-    page.window_maximized = True
+    # page.window_maximized = True
     page.scroll = "auto"
     page.title = "記帳小幫手"
 
@@ -20,14 +19,6 @@ def main(page: ft.Page):
         view_list.remove(view_name)
         return list( map(menu_buttons.get, view_list) )
 
-    new_record_view = ft.View(
-                    "/new_record",
-                    [
-                        ft.AppBar(title=ft.Text("單日記帳"), bgcolor=ft.colors.SURFACE_VARIANT),
-                        ft.Row(controls=buttons_in_view("new_record"))
-                    ],
-                )
-    
     def route_change(route):
         page.views.clear()
         match page.route:
@@ -37,7 +28,7 @@ def main(page: ft.Page):
                         "/",
                         [
                             ft.AppBar(title=ft.Text("功能列表"), bgcolor=ft.colors.SURFACE_VARIANT),
-                            ft.Row(controls=buttons_in_view("home"))
+                            ft.Column(controls=buttons_in_view("home"))
                         ],
                     )
                 )
