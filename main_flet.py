@@ -1,5 +1,5 @@
 import flet as ft
-
+from src.new_record import New_Record
 
 def main(page: ft.Page):
     # page.window_maximized = True
@@ -30,7 +30,7 @@ def main(page: ft.Page):
                         "/",
                         [
                             ft.AppBar(title=ft.Text("功能列表"), bgcolor=ft.colors.SURFACE_VARIANT),
-                            ft.Column(controls=buttons_in_view("home")) # list menu buttons as a column in home page
+                            ft.Column(controls=buttons_in_view("home")), # list menu buttons as a column in home page
                         ],
                     )
                 )
@@ -40,7 +40,8 @@ def main(page: ft.Page):
                         "/new_record",
                         [
                             ft.AppBar(title=ft.Text("單日記帳"), bgcolor=ft.colors.SURFACE_VARIANT),
-                            ft.Row(controls=buttons_in_view("new_record")) # list menu buttons as a row on the top of this page
+                            ft.Row(controls=buttons_in_view("new_record")), # list menu buttons as a row on the top of this page
+                            New_Record()
                         ],
                     )
                 )
@@ -50,7 +51,7 @@ def main(page: ft.Page):
                         "/query_print",
                         [
                             ft.AppBar(title=ft.Text("統計與列印"), bgcolor=ft.colors.SURFACE_VARIANT),
-                            ft.Row(controls=buttons_in_view("query_print")) # list menu buttons as a row on the top of this page
+                            ft.Row(controls=buttons_in_view("query_print")), # list menu buttons as a row on the top of this page
                         ],
                     )
                 )
@@ -60,7 +61,7 @@ def main(page: ft.Page):
                         "/clients",
                         [
                             ft.AppBar(title=ft.Text("客戶名單"), bgcolor=ft.colors.SURFACE_VARIANT),
-                            ft.Row(controls=buttons_in_view("clients")) # list menu buttons as a row on the top of this page
+                            ft.Row(controls=buttons_in_view("clients")), # list menu buttons as a row on the top of this page
                         ],
                     )
                 )
@@ -70,7 +71,7 @@ def main(page: ft.Page):
                         "/products",
                         [
                             ft.AppBar(title=ft.Text("產品列表"), bgcolor=ft.colors.SURFACE_VARIANT),
-                            ft.Row(controls=buttons_in_view("products")) # list menu buttons as a row on the top of this page
+                            ft.Row(controls=buttons_in_view("products")), # list menu buttons as a row on the top of this page
                         ],
                     )
                 )
